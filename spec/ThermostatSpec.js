@@ -26,6 +26,13 @@ describe('Thermostat', function(){
     it('decreases temp by 1 degree', function(){
       expect(thermo.decrease()).toEqual(thermo.defaultTemp()-1);
     });
+
+    it('doesn\'t go below 10', function(){
+      for (var i = 0; i < 40 ; i++) {
+        thermo.decrease();
+      };
+      expect(thermo.temp()).toEqual(10);
+    });
   });
 
   describe('#reset', function(){
@@ -34,6 +41,29 @@ describe('Thermostat', function(){
     });
   });
 
+  describe('#powerSave', function(){
+    it('is on by default, max temperature is 25', function(){
 
+      thermo.powerSave();
+      thermo.powerSave();
+
+      for (var i = 0; i < 20 ; i++) {
+        thermo.increase();
+      };
+
+      expect(thermo.temp()).toEqual(25);
+    });
+
+    it('is off, max temperature is 32', function(){
+
+      thermo.powerSave();
+
+      for (var i = 0; i < 20 ; i++) {
+        thermo.increase();
+      };
+
+      expect(thermo.temp()).toEqual(32);
+    });
+  });
 
 });
