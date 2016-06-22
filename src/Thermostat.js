@@ -22,13 +22,13 @@ Thermostat.prototype = {
   increase: function(){
     if(this._current_temp < this.maxTemp) {
       return this._current_temp += 1;
-    };
+    }
   },
 
   decrease: function(){
     if(this._current_temp > this.MIN_TEMP) {
       return this._current_temp -= 1;
-    };
+    }
   },
 
   reset: function(){
@@ -39,11 +39,13 @@ Thermostat.prototype = {
   powerSave: function(){
     if(this.powerOn === false) {
       this.powerOn = true;
-      return this.maxTemp = 25;
+      this.maxTemp = 25;
+      return true;
     } else {
       this.powerOn = false;
-      return this.maxTemp = 32;
-    };
+      this.maxTemp = 32;
+      return false;
+    }
   }
 
 };
