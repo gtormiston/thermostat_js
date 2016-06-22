@@ -1,0 +1,20 @@
+$(document).ready(function(){
+  var thermo = new Thermostat();
+  $('#temperature').text(thermo.temp());
+  $('#increase').click(function(){
+    thermo.increase();
+    $('#temperature').text(thermo.temp());
+  });
+  $('#decrease').click(function(){
+    thermo.decrease();
+    $('#temperature').text(thermo.temp());
+  });
+  $('#reset').click(function(){
+    thermo.reset();
+    $('#temperature').text(thermo.temp());
+  });
+  $('#powerSave').click(function(){
+    thermo.powerSave();
+    $('#powersaving').text(thermo.powerSaveStatus());
+  });
+});

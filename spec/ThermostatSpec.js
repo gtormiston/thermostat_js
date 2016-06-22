@@ -30,7 +30,7 @@ describe('Thermostat', function(){
     it('doesn\'t go below 10', function(){
       for (var i = 0; i < 40 ; i++) {
         thermo.decrease();
-      };
+      }
       expect(thermo.temp()).toEqual(10);
     });
   });
@@ -49,7 +49,7 @@ describe('Thermostat', function(){
 
       for (var i = 0; i < 20 ; i++) {
         thermo.increase();
-      };
+      }
 
       expect(thermo.temp()).toEqual(25);
     });
@@ -60,9 +60,20 @@ describe('Thermostat', function(){
 
       for (var i = 0; i < 20 ; i++) {
         thermo.increase();
-      };
+      }
 
       expect(thermo.temp()).toEqual(32);
+    });
+  });
+
+  describe('#powerSaveStatus', function(){
+    it('power save status on', function(){
+      expect(thermo.powerSaveStatus()).toEqual('On');
+    });
+
+    it('power save status off', function(){
+      thermo.powerSave();
+      expect(thermo.powerSaveStatus()).toEqual('Off');
     });
   });
 

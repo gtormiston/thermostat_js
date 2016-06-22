@@ -46,6 +46,14 @@ Thermostat.prototype = {
       this.maxTemp = 32;
       return false;
     }
+  },
+
+  powerSaveStatus: function(){
+    if(this.powerOn){
+      return 'On';
+    } else {
+      return 'Off';
+    }
   }
 
 };
