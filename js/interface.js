@@ -1,20 +1,27 @@
 $(document).ready(function(){
   var thermo = new Thermostat();
-  $('#temperature').text(thermo.temp());
+    updateTemp();
+
   $('#increase').click(function(){
     thermo.increase();
-    $('#temperature').text(thermo.temp());
+    updateTemp();
   });
   $('#decrease').click(function(){
     thermo.decrease();
-    $('#temperature').text(thermo.temp());
+    updateTemp();
   });
   $('#reset').click(function(){
     thermo.reset();
-    $('#temperature').text(thermo.temp());
+    updateTemp();
   });
   $('#powerSave').click(function(){
     thermo.powerSave();
     $('#powersaving').text(thermo.powerSaveStatus());
   });
+
+  function updateTemp(){
+    $('#temperature').text(thermo.temp());
+    $('#temperature').attr('class', thermo.energyUsage());
+  };
+
 });

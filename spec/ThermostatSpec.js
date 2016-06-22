@@ -77,4 +77,27 @@ describe('Thermostat', function(){
     });
   });
 
+  describe('#energyUsage', function(){
+    it('high usage', function(){
+      thermo.powerSave();
+      for (var i = 0; i < 20 ; i++) {
+        thermo.increase();
+      };
+      expect(thermo.energyUsage()).toEqual('high-usage');
+    });
+
+    it('medium usage', function(){
+      thermo.powerSave();
+      expect(thermo.energyUsage()).toEqual('medium-usage');
+    });
+
+    it('low usage', function(){
+      thermo.powerSave();
+      for (var i = 0; i < 3 ; i++) {
+        thermo.decrease();
+      };
+      expect(thermo.energyUsage()).toEqual('low-usage');
+    });
+  });
+
 });

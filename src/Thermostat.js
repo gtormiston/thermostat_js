@@ -54,6 +54,16 @@ Thermostat.prototype = {
     } else {
       return 'Off';
     }
+  },
+
+  energyUsage: function(){
+    if(this._current_temp >= 25) {
+      return 'high-usage';
+    } else if(this._current_temp < 18) {
+      return 'low-usage';
+    } else {
+      return 'medium-usage';
+    }
   }
 
 };
