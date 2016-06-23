@@ -10,9 +10,38 @@
 	color: green;
 }
 
-h1 {
+.container {
+	width: 1000px;
+	margin: 0 auto;
+
+}
+
+.left {
+	float: left;
+	width: 40%;
+	height: 500px;
+	text-align: right;
+	padding: 10% 5% 10% 5%;
+}
+
+.right {
+	float: right;
+	width: 50%;
+	background: #000;
+	height: 500px;
+}
+
+.right img {
+	height: 500px;
+	width: auto;
+	float: left;
+}
+
+
+h1#temperature {
 	font-family: Impact, Charcoal, sans-serif;
-	color: #099196;
+	font-size: 100px;
+	margin: 0
 }
 
 h3 {
@@ -39,8 +68,6 @@ select {
     appearance:none;
     cursor:pointer;
 }
-
-body, html {background:#444; text-align:center; padding:50px 0;}
 
 /* The CSS */
 select {
