@@ -37,6 +37,12 @@
 	float: left;
 }
 
+h1.pagetitle {
+	font-family: Impact, Charcoal, sans-serif;
+	text-align:center;
+	color:#888;
+	margin: 20px 0;
+}
 
 h1#temperature {
 	font-family: Impact, Charcoal, sans-serif;
@@ -81,7 +87,7 @@ select {
 	height: 34px;
 	-webkit-appearance: none;
 	overflow: hidden;
-	background: url(new_arrow.png) no-repeat right #ddd;
+	background: url('../img/new_arrow.png') no-repeat right #ddd;
 	border: 1px solid #ccc;
 }
 
